@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POLLS</title>
+</head>
+<body>
+    {{ question.question_text }}
+    <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice }}</li>
+        {% empty %}
+            <p>No choices are available</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
